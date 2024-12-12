@@ -1,26 +1,50 @@
 import readlinesync = require("readline-sync");
 import {colors} from './src/util/Colors';
 import { Conta } from "./src/model/Conta";
-
+import { contaCorrente } from "./src/model/ContaCorrente";
+import { contaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
   let opcao: number;
 
   //Cria novas Instancias (Objetos) da Classe Conta
-  const c1 = new Conta(1, 123, 1, "Jonas", 100000);
-  c1.visualizar();
+  //const c1 = new Conta(1, 123, 1, "Jonas", 100000);
+  //c1.visualizar();
 
   //saque
-  console.log(c1.sacar(200000.00));
-  c1.visualizar();
+  //console.log(c1.sacar(200000.00));
+  //c1.visualizar();
 
-  const c2 = new Conta(2, 123, 2, "Aline", 200000);
-  c2.visualizar();
+  //const c2 = new Conta(2, 123, 2, "Aline", 200000);
+  //c2.visualizar();
 
   //deposito
-  c2.depositar(100.00);
-  c2.visualizar();
+  //c2.depositar(100.00);
+  //c2.visualizar();
 
+  //Contas Correntes
+  const cc1 = new contaCorrente(3, 789, 1, "Andressa", 100000, 1000);
+  cc1.visualizar();
+
+  const cc2 = new contaCorrente(4, 456, 1, "Beatriz", 5000000, 50000);
+  cc2.visualizar();
+
+  //saque na conta corrente
+  cc1.sacar(100500);
+  cc1.visualizar();
+
+  //deposito na conta corrente
+  cc1.depositar(2000);
+  cc1.visualizar();
+
+  console.log(" ");
+
+  //conta Poupanca
+  const cp1 = new contaPoupanca(5, 799, 2, "Ana", 900000, 12);
+  cp1.visualizar();
+
+  const cp2 = new contaPoupanca(6, 654, 2, "Carlos", 300000, 26);
+  cp1.visualizar();
 
   while (true) {
     console.log(colors.bg.black, colors.fg.yellow,"***********************************************");
