@@ -1,6 +1,6 @@
 import {Conta} from "./Conta"
 
-export class contaCorrente extends Conta{
+export class ContaCorrente extends Conta{
     private _limite: number;
 
 

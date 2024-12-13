@@ -1,6 +1,6 @@
 import {Conta} from "./Conta"
 
-export class contaPoupanca extends Conta{
+export class ContaPoupanca extends Conta{
     private _aniversario: number;
 
 
@@ -26,7 +26,7 @@ export class contaPoupanca extends Conta{
     //visualizar
     public visualizar(){
         super.visualizar();
-        console.log(`Conta Poupanca: ${this._aniversario}`)
+        console.log(`Aniversario: ${this._aniversario}`)
     }
 
 }
