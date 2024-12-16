@@ -37,7 +37,8 @@ export function main() {
     console.log("           6 - Sacar                           ");
     console.log("           7 - Depositar                       ");
     console.log("           8 - Transferir Valores entre Conta  ");
-    console.log("           9 - Sair                            ");
+    console.log("           9 - Buscar Conta  por Titular       ");
+    console.log("           0 - Sair                            ");
     console.log("                                               ");
     console.log("***********************************************");
     console.log("                                               ",colors.reset);
@@ -45,7 +46,7 @@ export function main() {
     console.log("Entre com a opcao desejada: ");
     opcao = readlinesync.questionInt("");
 
-    if (opcao == 9) {
+    if (opcao == 0) {
       console.log(colors.fg.greenstrong,"\nBanco Cripto Money - O futuro do seu Dinheiro comeca aqui");
       sobre();
       console.log(colors.reset, "")
@@ -185,6 +186,13 @@ export function main() {
         contas.transferir(numero, numeroDestino, valor);
         
         keyPress()
+        break;
+      case 9:
+        console.log(colors.fg.whitestrong,"\n\nConsulta Titular\n\n", colors.reset);
+          console.log("\nDigite o nomedo titular: ")
+          titular = readlinesync.question("")
+          contas.procurarPorTitular(titular);
+          keyPress()
         break;
       default:
         console.log(colors.fg.whitestrong,"\n\nOpcao Invalida!\n\n", colors.reset);
