@@ -30,7 +30,6 @@ export class ContaController implements ContaRepository{
     }
 
     atualizar(conta: Conta): void {
-<<<<<<< HEAD
         const buscaConta = this.buscarNoArray(conta.numero);
         console.log("A conta foi atualizada com sucesso!");
 
@@ -52,13 +51,6 @@ export class ContaController implements ContaRepository{
         }else{
             console.log(`\nConta não encontrada!`)
         }
-=======
-        throw new Error("Method not implemented.");
-    }
-
-    deletar(conta: Conta): void {
-        throw new Error("Method not implemented.");
->>>>>>> 02277988a5e63a4e2b674a3cb5ccc0cd4a5d1cd7
     }
 
     sacar(numero: number, valor: number): void {
