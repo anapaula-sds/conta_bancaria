@@ -99,10 +99,50 @@ export function main() {
         break;
       case 4:
         console.log(colors.fg.whitestrong,"\n\nAtualizar Dados da Conta\n\n", colors.reset);
+
+        console.log("Digite o Número da conta: ")
+        numero = readlinesync.questionInt('');
+
+        let conta = contas.buscarNoArray(numero);
+
+        if (conta !== null){
+
+        console.log("Digite o Novo Número da Agencia: ");
+        agencia = readlinesync.questionInt('');
+        
+        console.log("Digite o Novo Nome do Titular: ");
+        titular = readlinesync.question('');
+
+        console.log("Digite o Novo  Saldo da Conta: ");
+        saldo = readlinesync.questionFloat('');
+
+        tipo = conta.tipo;
+
+        switch(tipo){
+          case 1:
+            console.log("Digite o Novo Limite da Conta: ");
+            limite = readlinesync.questionFloat('');
+            contas.atualizar(new ContaCorrente(numero, agencia, tipo, titular, saldo, limite));
+          break;
+          case 2:
+            console.log("Digite o Novo Dia do Aniversario da Poupanca: ");
+            aniversario = readlinesync.questionInt('');
+            contas.atualizar(new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario));
+          break;
+        }
+      }else{
+        console.log("Conta não encontrada!")
+      }
+
         keyPress()
         break;
       case 5:
         console.log(colors.fg.whitestrong,"\n\nApagar uma Conta\n\n", colors.reset);
+
+        console.log("Digite o Número da conta: ")
+        numero = readlinesync.questionInt('');
+        contas.deletar(numero);
+
         keyPress()
         break;
       case 6:

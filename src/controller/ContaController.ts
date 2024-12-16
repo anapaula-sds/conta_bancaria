@@ -30,11 +30,27 @@ export class ContaController implements ContaRepository{
     }
 
     atualizar(conta: Conta): void {
-        throw new Error("Method not implemented.");
-    }
+        const buscaConta = this.buscarNoArray(conta.numero);
+        console.log("A conta foi atualizada com sucesso!");
 
-    deletar(conta: Conta): void {
-        throw new Error("Method not implemented.");
+        if(buscaConta !== null){
+            this.listaContas[this.listaContas.indexOf(buscaConta)] = conta;
+        }else{
+            console.log(`\nConta não encontrada!`)
+        }
+    
+    }
+    
+
+    deletar(numero: number): void {
+        const buscaConta = this.buscarNoArray(numero)
+
+        if(buscaConta !== null){
+            this.listaContas.splice(this.listaContas.indexOf(buscaConta), 1)
+            console.log("A conta foi deletada com sucesso!")
+        }else{
+            console.log(`\nConta não encontrada!`)
+        }
     }
 
     sacar(numero: number, valor: number): void {
