@@ -2,7 +2,7 @@ import { Conta } from "../model/Conta";
 
 export interface ContaRepository{
 
-    //aSSINATURAS - Métodos do CRUD (Create, Read, Update, Delete)
+    //ASSINATURAS - Métodos do CRUD (Create, Read, Update, Delete)
     procurarPorNumero(numero: number): void;
     listarTodas(): void;
     cadastrar(conta: Conta): void;
