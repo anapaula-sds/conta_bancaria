@@ -14,18 +14,12 @@ export function main() {
   //Criando objeto da Classe ContaController
   const contas = new ContaController();
   
-  //Novas Instâncias da Classe ContaCorrente (Objetos)
-  contas.cadastrar(new ContaCorrente(contas.gerarNumero(), 1234, 1, 'Amanda Magro', 1000000.00, 100000.00));
-  contas.cadastrar(new ContaCorrente(contas.gerarNumero(), 4578, 1, 'João da Silva', 1000.00, 100.00));
-
-  // Novas Instâncias da Classe ContaPoupança (Objetos)
-  contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), 5789, 2, "Geana Almeida", 10000, 10));
-  contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), 5698, 2, "Jean Lima", 15000, 15));
-
+  
   while (true) {
-    console.log(colors.bg.black, colors.fg.yellow,"***********************************************");
+    console.log(colors.bg.black, colors.fg.yellow,
+               "************************************************");
     console.log("                                               ");
-    console.log("             Banco Cripto Money                ");
+    console.log("          💵💰Banco Cripto Money💰💵         ");
     console.log("                                               ");
     console.log("***********************************************");
     console.log("                                               ");
@@ -41,7 +35,8 @@ export function main() {
     console.log("           0 - Sair                            ");
     console.log("                                               ");
     console.log("***********************************************");
-    console.log("                                               ",colors.reset);
+    console.log("                                               ",
+    colors.reset);
 
     console.log("Entre com a opcao desejada: ");
     opcao = readlinesync.questionInt("");
@@ -205,8 +200,8 @@ export function main() {
 
 export function sobre():void{
     console.log("***********************************************");
-    console.log("Projeto Desenvolvido por: ");
-    console.log("Ana Paula Santana - anapaula-sds@hotmail.com");
+    console.log("💻Projeto Desenvolvido por: ");
+    console.log("Ana Paula Santana - anapaula-sds@hotmail.com 🌹");
     console.log("https://github.com/anapaula-sds/");
     console.log("***********************************************");
 }
